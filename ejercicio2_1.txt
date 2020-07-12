@@ -1,0 +1,96 @@
+interface IAve {  
+    void comer();
+}
+interface IAveVoladora {  
+    void volar();
+}
+
+interface IAveNadadora {  
+    void nadar();
+}
+
+class Loro implements IAve, IAveVoladora{
+
+    @Override
+    public void volar() {
+        //...
+    }
+
+    @Override
+    public void comer() {
+        //...
+    }
+}
+
+class Pinguino implements IAve, IAveNadadora{
+
+    @Override
+    public void nadar() {
+        //...
+    }
+
+    @Override
+    public void comer() {
+        //...
+    }
+}
+
+    @Override
+    public void nadar() {
+        //...
+    }
+}
+
+class DatabaseService{  
+    //...
+    void getDatos(){ //... }
+}
+
+class AccesoADatos {
+
+    private DatabaseService databaseService;
+
+    public AccesoADatos(DatabaseService databaseService){
+        this.databaseService = databaseService;
+    }
+
+    Dato getDatos(){
+        databaseService.getDatos();
+        //...
+    }
+}
+
+interface Conexion {  
+    Dato getDatos();
+    void setDatos();
+}
+
+class AccesoADatos {
+
+    private Conexion conexion;
+
+    public AccesoADatos(Conexion conexion){
+        this.conexion = conexion;
+    }
+
+    Dato getDatos(){
+        conexion.getDatos();
+    }
+}
+class DatabaseService implements Conexion {
+
+    @Override
+    public Dato getDatos() { //... }
+
+    @Override
+    public void setDatos() { //... }
+}
+
+class APIService implements Conexion{
+
+    @Override
+    public Dato getDatos() { //... }
+
+    @Override
+    public void setDatos() { //... }
+}
